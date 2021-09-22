@@ -28,31 +28,31 @@
         android:id="@+id/relative_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/scode_profile"
+        android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/selectableItemBackground"
-        android:layout_below="@+id/scode_profile"
         android:paddingVertical="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="70dp">
+            android:layout_marginStart="70dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Имя"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/name_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Иванов Иван"
-                android:textSize="26sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="26sp" />
 
         </LinearLayout>
 
@@ -70,22 +70,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="70dp">
+            android:layout_marginStart="70dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Телефон"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/phone_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+7 (999) 999-99-99"
-                android:textSize="26sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="26sp" />
 
         </LinearLayout>
 
@@ -109,31 +109,31 @@
         android:id="@+id/relative_house_no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/relative_phone"
+        android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/selectableItemBackground"
-        android:layout_below="@id/relative_phone"
         android:paddingVertical="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="70dp">
+            android:layout_marginStart="70dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Страна"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/country_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Россия"
-                android:textSize="26sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="26sp" />
 
         </LinearLayout>
 
