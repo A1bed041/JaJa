@@ -6,16 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
 import java.sql.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listView = findViewById(R.id.listview);
 
         int[] IdImage = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i};
         String[] Name = {"Руслан", "Василиса", "Роман", "Елизавета", "Дарья", "Адель", "Артём", "Елисей", "Максим", "Мария"};
@@ -31,17 +36,23 @@ public class MainActivity extends AppCompatActivity {
                 userArrayList.add(user);
         }
 
+        ListAdapter listAdapter = new ListAdapter(MainActivity.this, userArrayList);
+        listView.setAdapter(listAdapter);
+        listView.setClickable(true);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent I = new Intent(MainActivity.this, UserActivity.class);
+                I.putExtra("name",Name[i]);
+                I.putExtra("LastMessage",LastMessage[i]);
+                I.putExtra("Phone",Phone[i]);
+                I.putExtra("Contry",Contry[i]);
+                I.putExtra("MessTime",MessTime[i]);
+                I.putExtra("IdImage",IdImage[i]);
 
-    }
+                startActivity(I);
+            }
+        });
 
-    public void onItemClik (AdapterView<?> perent, View view, int position, long in)
-    {
-        Intent i = new Intent(MainActivity.this, UserActivity.class);
-//        i.putExtra("name",name[position]);
-//        i.putExtra("LastMessage",LastMessage[position]);
-//        i.putExtra("Phone",Phone[position]);
-//        i.putExtra("Contry",Contry[position]);
-//        i.putExtra("MessTime",MessTime[position]);
-        startActivity(i);
     }
 }
